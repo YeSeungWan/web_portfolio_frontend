@@ -15,18 +15,6 @@ export default function Experience() {
       ],
       skills: ["C/C++", "Cortex-M4", "FreeRTOS", "Keil uVision", "Git"],
     },
-    {
-      period: "2022.01 - 2024.02",
-      role: "임베디드 소프트웨어 개발자",
-      company: "이전 회사명 (또는 참여 프로젝트명)",
-      description: "임베디드 시스템 아키텍처 설계 및 리눅스 환경 애플리케이션 개발",
-      details: [
-        "Embedded Linux 환경에서 주변 장치 제어 및 내부 통신 데몬(Daemon) 프로그램 개발",
-        "Python을 활용한 데이터 CRC32 검증 알고리즘 구현 및 C 라이브러리 간 정밀도 동기화 워크숍 주도",
-        "오실로스코프 및 로직 분석기를 활용한 물리 레이어 하드웨어 신호 무결성 디버깅",
-      ],
-      skills: ["C++", "Linux", "Python", "Shell Script", "GCC/GDB"],
-    },
   ];
 
   return (
