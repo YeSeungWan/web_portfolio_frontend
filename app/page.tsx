@@ -8,8 +8,6 @@ import Projects from '@/sections/Projects';
 import Contact from '@/sections/Contact';
 
 export default function Home() {
-  // 고양이 인트로는 일단 뼈대 잡는 동안 꺼두거나 생략할 수 있게 true/false로 제어합니다.
-  const [isIntroActive, setIsIntroActive] = useState(false); 
 
   return (
     <main className="relative min-h-screen bg-zinc-950 text-white">
