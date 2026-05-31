@@ -1,7 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar"; // 💡 내 최상위 components 폴더에서 불러옴
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Firmware Dev Portfolio",
