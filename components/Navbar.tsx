@@ -1,4 +1,4 @@
-'use client'; // 클라이언트 사이드에서 스크롤을 감지해야 하므로 필수
+'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
