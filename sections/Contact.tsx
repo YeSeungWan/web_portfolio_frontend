@@ -1,24 +1,25 @@
-'use client'; // 버튼 클릭 이벤트를 처리하기 위해 추가
+'use client';
 
 import { useState } from 'react';
+import ContactModal from '../components/ContactModal';
 
 export default function Contact() {
   const email = "tmddhks68@gmail.com";
   const [copied, setCopied] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleCopyEmail = (e: React.MouseEvent) => {
-    // 1. 기본 mailto 동작은 그대로 수행 시도
-    // (메일 앱이 설정된 사용자는 앱이 켜짐)
-    
-    // 2. 동시에 클립보드에 이메일 주소 복사 (방어 코드)
+  const handleOpenContactModal = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsModalOpen(true);
+
     navigator.clipboard.writeText(email).then(() => {
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000); // 2초 후 메시지 초기화
+      setTimeout(() => setCopied(false), 2000);
     });
   };
 
   return (
-    <section id="contact" className="py-20 font-sans max-w-4xl mx-auto px-6">
+    <section id="contact" className="py-20 font-sans max-w-4xl mx-auto px-6 relative">
       <h2 className="font-mono text-2xl font-bold text-green-400 mb-12">
         [04. Get In Touch]
       </h2>
@@ -34,17 +35,16 @@ export default function Contact() {
           <p className="text-white text-xl font-bold mb-6">{email}</p>
           
           <div className="relative inline-block">
-            <a 
-              href={`mailto:${email}`}
-              onClick={handleCopyEmail}
-              className="inline-block text-xs font-bold text-zinc-950 bg-green-400 hover:bg-green-300 px-6 py-3 rounded transition-colors select-none"
+            <button 
+              onClick={handleOpenContactModal}
+              className="inline-block text-xs font-bold text-zinc-950 bg-green-400 hover:bg-green-300 px-6 py-3 rounded transition-colors select-none cursor-pointer"
             >
-              {copied ? "✓ Copied to Clipboard!" : "Say Hello (Send Email)"}
-            </a>
+              {copied ? "✓ Box Opened & Copied!" : "Say Hello (Send Email)"}
+            </button>
           </div>
           
           <p className="text-zinc-500 text-[11px] mt-3">
-            * 메일 프로그램이 열리지 않으면 주소가 이미 복사되었으니 붙여넣기(Ctrl+V) 하시면 됩니다.
+            * 버튼을 누르면 우측 하단에 간편 문의 창이 열리며, 주소도 자동 복사됩니다.
           </p>
         </div>
 
@@ -52,6 +52,9 @@ export default function Contact() {
           &copy; {new Date().getFullYear()} Firmware Portfolio. Powered by Next.js & Synology NAS.
         </footer>
       </div>
+
+      {/* 우측 하단 스탠바이 */}
+      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }
