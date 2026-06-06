@@ -38,6 +38,7 @@ my-portfolio-frontend/
 ├── .gitignore              # .next, node_modules, .env 필터링 설정
 ├── package.json            # 프로젝트 의존성 라이브러리 및 스크립트 관리 설정 파일
 └── README.md               # 프로젝트 가이드 문서
+```
 
 
 ## 🏗 인프라 구축 및 배포 (Synology NAS Web UI)
