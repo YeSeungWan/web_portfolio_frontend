@@ -1,5 +1,5 @@
 name: Build and Push Docker Image
-
+# Github action 확인용 빌드
 on:
   push:
     branches: [ "main" ]
