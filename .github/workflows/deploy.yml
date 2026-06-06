@@ -1,0 +1,36 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches: [ "main" ] # main 브랜치에 git push가 일어날 때 이 인터럽트(액션)가 트리거됩니다.
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. 깃허브 가상 컴퓨터로 내 프론트엔드 소스코드를 땡겨옵니다.
+    - name: Checkout source code
+      uses: actions/checkout@v4
+
+    # 2. 금고에 넣어둔 아이디/비밀번호로 도커 허브에 로그인합니다.
+    - name: Log in to Docker Hub
+      uses: actions/docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+    # 3. 고속 빌드를 위한 도커 빌드 도구를 세팅합니다.
+    - name: Set up Docker Buildx
+      uses: actions/docker/setup-buildx-action@v3
+
+    # 4. 소스코드를 Docker 이미지로 빌드하고 도커 허브로 강제 푸시합니다.
+    - name: Build and push Docker image
+      uses: actions/docker/build-push-action@v5
+      with:
+        context: .
+        file: ./Dockerfile
+        push: true
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKER_IMAGE_NAME }}:latest
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
