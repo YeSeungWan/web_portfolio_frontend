@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 const EXPERIENCE_DATA = [
   {
-    year: "2026 ~ 현재",
+    year: "2026 ~ 2026.06.30(희망퇴직 예정)",
     role: "다중 통신 및 MindMotion/TI MCU 기반 제품 개발 · PL",
     category: "Embedded Firmware Architecture / PL",
     techStack: ["MindMotion", "TI MCU", "Cortex-M", "OTA Protocol", "Failsafe"],

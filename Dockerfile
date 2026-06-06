@@ -20,7 +20,6 @@ COPY --from=builder /app/node_modules ./node_modules
 RUN echo '#!/bin/sh' > /app/entrypoint.sh && \
     echo 'set -a' >> /app/entrypoint.sh && \
     echo '[ -f /app/.env.production ] && . /app/.env.production' >> /app/entrypoint.sh && \
-    echo 'echo "DEBUG: API_ADDR is $NEXT_PUBLIC_MY_PORTFOLIO_BACK_ADDR"' >> /app/entrypoint.sh && \
     echo 'set +a' >> /app/entrypoint.sh && \
     echo 'exec npm run start' >> /app/entrypoint.sh && \
     chmod +x /app/entrypoint.sh
