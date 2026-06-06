@@ -1,4 +1,10 @@
 name: Build and Push Docker Image
+uses: docker/build-push-action@v5
+  with:
+    # ... 
+    build-args: |
+      NEXT_PUBLIC_MY_PORTFOLIO_FRONT_ADDR=placeholder
+      NEXT_PUBLIC_MY_PORTFOLIO_BACK_ADDR=placeholder
 
 on:
   push:
