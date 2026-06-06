@@ -38,14 +38,14 @@ my-portfolio-frontend/
 ├── .gitignore              # .next, node_modules, .env 필터링 설정
 
 
-🏗 인프라 구축 및 배포 (Synology NAS Web UI)
+## 🏗 인프라 구축 및 배포 (Synology NAS Web UI)
 외부 클라우드 서비스(AWS, Vercel 등)를 사용하지 않고 자체 인프라를 구축했습니다.
 
 Container Manager 연동: 시놀로지 DSM의 Container Manager 웹 UI를 활용하여 웹 서비스를 가상화 환경에서 안정적으로 독립 구동합니다.
 
 포트 설정 및 매핑: 외부 브라우저 진입을 위해 NAS의 로컬 포트와 컨테이너 내부의 포트를 시놀로지 Container Manager UI 상에서 직관적으로 매핑하여 네트워크 환경을 제어합니다.
 
-🔐 주요 조치 사항
+## 🔐 주요 조치 사항
 환경변수 보호: 로컬 개발 환경 설정을 위한 민감한 정보나 통신 주소가 외부 원격 저장소에 노출되지 않도록 .gitignore를 엄격하게 적용했습니다.
 
 저장소 독립화: 프로젝트 규모가 커짐에 따라 유지보수성을 높이고 프론트/백엔드 간의 의존성을 줄이기 위해 소스 코드를 별도의 독립된 레포지토리로 분리하여 관리합니다.
