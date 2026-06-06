@@ -2,7 +2,6 @@
 import Image from 'next/image';
 
 export default function About() {
-  const MY_PROFILE_IMAGE = process.env.NEXT_PUBLIC_MY_PROFILE_IMAGE ?? "";
 
   const aboutSections = [
     {
@@ -49,7 +48,7 @@ export default function About() {
           <div className="relative w-48 h-48 md:w-56 md:h-56">
             <div className="absolute inset-0 bg-green-500/10 rounded-full blur-xl" />
             <Image 
-              src={MY_PROFILE_IMAGE} 
+              src={process.env.NEXT_PUBLIC_MY_PROFILE_IMAGE ?? ""} 
               alt="Profile Picture"
               fill
               className="object-cover rounded-full border-2 border-zinc-800 grayscale hover:grayscale-0 transition-all duration-500"
