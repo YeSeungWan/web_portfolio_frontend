@@ -12,18 +12,18 @@ WORKDIR /app
 ENV NODE_ENV=production
 
 COPY --from=builder /app/package.json ./
-COPY --from=builder /app/next.config.ts ./ 
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/node_modules ./node_modules
 
-# 런타임에 .env를 적용하는 스크립트 생성
-RUN echo '#!/bin/sh' > entrypoint.sh && \
-    echo 'set -a' >> entrypoint.sh && \
-    echo '[ -f /app/.env.production ] && . /app/.env.production' >> entrypoint.sh && \
-    echo 'set +a' >> entrypoint.sh && \
-    echo 'exec npm run start' >> entrypoint.sh && \
-    chmod +x entrypoint.sh
+# 런타임에 .env를 적용하는 스크립트를 빌드 시점에 자동 생성
+RUN echo '#!/bin/sh' > /app/entrypoint.sh && \
+    echo 'set -a' >> /app/entrypoint.sh && \
+    echo '[ -f /app/.env.production ] && . /app/.env.production' >> /app/entrypoint.sh && \
+    echo 'echo "DEBUG: API_ADDR is $NEXT_PUBLIC_MY_PORTFOLIO_BACK_ADDR"' >> /app/entrypoint.sh && \
+    echo 'set +a' >> /app/entrypoint.sh && \
+    echo 'exec npm run start' >> /app/entrypoint.sh && \
+    chmod +x /app/entrypoint.sh
 
 EXPOSE 3000
 ENTRYPOINT ["/app/entrypoint.sh"]
