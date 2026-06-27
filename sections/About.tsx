@@ -16,16 +16,16 @@ export default function About() {
 
   const aboutSections = [
     {
-      title: "01. Philosophy & Approach",
-      desc: "하드웨어에 대한 깊은 호기심을 바탕으로 매뉴얼과 레지스터 레벨의 제어를 분석하여 최적의 펌웨어 솔루션을 설계합니다. 단순한 코드 구현을 넘어, 리소스 효율성과 안정성, 그리고 양산 효율까지 고려한 '고장 나지 않는 견고한 시스템'을 아키텍처링하는 것이 저의 철학입니다."
+      title: "01. Life Philosophy",
+      desc: "14살, 이해할 수 없던 코딩 앞에 느꼈던 분함이 제 여정의 시작이었습니다. \"반드시 내가 모르는 것을 알아내고 내 직업으로 만들겠다.\"라고 말하던 다짐하며 현재까지 왔습니다. 저는 과거를 기억하며, 어제보다 나은 내가 되기 위해, 그리고 꿈을 향해 끊임없이 한 발짝 내딛는 삶을 살기 위해 노력합니다."
     },
     {
-      title: "02. Domain Expertise",
-      desc: "임베디드 아키텍처 설계(분리형 구조, 리소스 최적화), 이기종 통신 프로토콜 동기화, 고신뢰성 OTA 설계에 풍부한 실무 경험을 보유하고 있습니다. 특히 Anti-Brick 로직과 예외 상황 처리를 위한 FSM 설계 등 실질적인 필드 이슈 해결에 특화되어 있습니다."
+      title: "02. Attitude Towards Technology",
+      desc: "저에게 개발은 오랜 '꿈'이기에, 제가 만드는 모든 결과물에는 애정과 책임감을 가지고 임합니다. 결과물에 대해서 스스로에게 질문하며, \"지금 이 결과가 내가 최선을 다한 결과인가?\"를 고민합니다. 적당히 타협하는 것은 제 꿈과 제 자신에 대한 예의가 아니라고 생각하기에, 매 순간 진심을 다해 당시 가진 기술을 사용해 결과를 만듭니다."
     },
     {
-      title: "03. Continuous Growth & Vision",
-      desc: "깨끗하고 유지보수 가능한 코드(Clean Code)를 최우선으로 하며, 실무 문제를 해결하는 하드웨어 솔루션을 넘어, 향후 견고하고 확장 가능한 임베디드 시스템을 설계하는 것이 저의 비전입니다."
+      title: "03. Desired Environment",
+      desc: "저에게 가장 중요한 것은 당장의 보상보다, 함께 성장의 궤적을 그리며 나란히 걸어갈 수 있는 회사입니다. 아직 소프트웨어 개발 문화가 부족하다면 주도적으로 만들어갈 준비가 되어 있으며, 그 여정 속에서 깊게 소통하고 함께 성장할 동료를 원합니다. 돈을 쫓기보다 내 꿈과 진심을 온전히 쏟아부을 수 있는 환경을 향해 나아가고 싶습니다."
     }
   ];
 
@@ -33,7 +33,7 @@ export default function About() {
 
   return (
     <section id="about" className="py-20 border-b border-zinc-900">
-      <div className="flex flex-col md:flex-row items-start gap-12">
+      <div className="flex flex-col md:flex-row items-center gap-8">
         
         {/* 1. 좌측: 3단 상세 소개 */}
         <div className="flex-1 space-y-6">
@@ -54,7 +54,7 @@ export default function About() {
         </div>
 
         {/* 2. 우측: 사진 + 인적사항 */}
-        <div className="flex flex-col items-center gap-4 shrink-0 mx-auto md:mx-0 w-48 md:w-56 mt-12">
+        <div className="flex flex-col items-center gap-4 shrink-0 mx-auto md:mx-0 w-48 md:w-56 mt-12 md:mt-0">
           <div className="relative w-48 h-48 md:w-56 md:h-56">
             <div className="absolute inset-0 bg-green-500/10 rounded-full blur-xl" />
             <Image 
