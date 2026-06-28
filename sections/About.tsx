@@ -29,7 +29,7 @@ export default function About() {
     }
   ];
 
-  const skills = ["Embedded C/C++", "python", ".NET", "Cortex-M0", "Bare-Metal", "OTA", "Visual Stuio/Code", "Eclipse", "IAR", "CCS", "STM32 CUBE", "Hardware Debugging", "Git", "JIRA"];
+  const skills = ["Embedded C/C++", "python", ".NET", "Cortex-M0", "Bare-Metal", "OTA", "Visual Studio Code", "Eclipse", "IAR", "CCS", "STM32 CUBE", "Hardware Debugging", "Git", "JIRA"];
 
   return (
     <section id="about" className="py-20 border-b border-zinc-900">

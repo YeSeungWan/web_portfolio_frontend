@@ -7,6 +7,8 @@ interface AppConfig {
   PROFILE_IMAGE: string;
   PORTPORT_FRONT_SRC_URL: string,
   PORTPORT_BACK_SRC_URL: string,
+  PROJECT_NORDIC_SRC_URL: string
+  PROJECT_STM32_SRC_URL: string
 }
 
 const ConfigContext = createContext<AppConfig | null>(null);

@@ -16,7 +16,7 @@ interface ProjectItem {
 
 export default function Projects() {
 
-  const { PORTPORT_FRONT_SRC_URL, PORTPORT_BACK_SRC_URL } = useConfig();
+  const { PORTPORT_FRONT_SRC_URL, PORTPORT_BACK_SRC_URL, PROJECT_NORDIC_SRC_URL, PROJECT_STM32_SRC_URL } = useConfig();
 
   const projects: ProjectItem[] = [
     {
@@ -34,21 +34,35 @@ export default function Projects() {
       link: PORTPORT_BACK_SRC_URL
     },
     {
-      title: "My Portfolio Embedded - Hardware Independent Architect",
+      title: "Hardware Independent Architect",
       // slug : "Block",
       category: "architecture",
-      description: "추상화 기법을 적용한 상용 MCU 간 이식성이 뛰어난 펌웨어 아키텍처 설계에 대한 내용입니다.",
+      description: "상용 MCU 간 이식성과 확장성을 극대화하기 위해 HAL 레벨을 분리하고 추상화 기법을 적용한 하드웨어 독립적 펌웨어 아키텍처 설계 경험입니다.",
       tags: ["Cortex-M0", "C", "HAL_LIB"],
       link: null
     },
     {
-      title: "My Portfolio Embedded - OTA",
+      title: "Cortex-M0 기반 OTA 시스템 설계",
       // slug: "Block",
       category: "Cortex-M0 - OTA Architect",
-      description: "Cortex-M0 MCU 환경에서 OTA 개발에 대한 내용 입니다.",
+      description: "Cortex-M0 MCU 환경에서 부트로더와 메모리 맵(Memory Map)을 직접 설계하고, FSM 기반의 안정적인 펌웨어 무선 업데이트(OTA) 및 Fail-Safety 시나리오를 구축한 경험입니다.",
       tags: ["Cortex-M0", "Memory Map", "FSM", "Fail Safety"],
       link: null
-    }
+    },
+    {
+      title: "nRF52840 DK - Embedded Wireless Project",
+      category: "Nordic Development Kit",
+      description: "Nordic Development Kit과 Zephyr RTOS를 활용한 프로젝트입니다. BLE 통신과 SoC 저전력 제어를 중심으로 기능을 확장해 나가고 있습니다. (진행 중)",
+      tags: ["Nordic", "nRF52840 DK", "Zephyr(RTOS)", "BLE", "SoC", "Visual Studio Code", "GitHub"],
+      link: PROJECT_NORDIC_SRC_URL
+    },
+    {
+      title: "NUCLEO-F401RE - Real-Time Control Project",
+      category: "STM32 NUCLEO Board",
+      description: "STM32 NUCLEO 보드와 FreeRTOS 기반의 실시간 시스템 제어 프로젝트입니다. CAN 통신 및 주변장치 드라이버 설계 역량을 다지며 기능을 구현하고 있습니다. (진행 중)",
+      tags: ["STM32", "NUCLEO-F401RE", "Free-RTOS", "CAN", "STM32 Cube", "GitHub"],
+      link: PROJECT_STM32_SRC_URL
+    },
   ];
   
   return (
