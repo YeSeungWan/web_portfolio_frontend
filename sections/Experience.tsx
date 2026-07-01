@@ -139,7 +139,7 @@ const EXPERIENCE_DATA = [
         ]
       },
       {
-        keyword: "소프트웨어 구조 최적화 (원가 절감)",
+        keyword: "소프트웨어 구조 최적화",
         list: [
           "메모리 마진 확보: 변수 스코프 엄격화 및 비효율 함수 구조 개선을 통해 단일 레거시 제품 Flash/RAM 각각 30% 절감"
         ]
@@ -162,7 +162,7 @@ export default function Experience() {
         <div className="mt-3 md:mt-4 text-xs md:text-sm text-zinc-500 flex flex-wrap items-center gap-2 font-mono">
           <span>제일 일렉트릭</span>
           <span className="hidden sm:inline">/</span>
-          <span className="text-zinc-600 sm:text-zinc-500">2023.12 ~ 2026.06 (희망퇴직 예정)</span>
+          <span className="text-zinc-600 sm:text-zinc-500">2023.12 ~ 2026.06</span>
         </div>
       </div>
 
