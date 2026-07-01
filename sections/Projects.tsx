@@ -1,6 +1,7 @@
 'use client';
 
 import { useConfig } from '@/lib/configContext';
+import Link from 'next/link';
 
 interface ProjectItem {
   title: string;
@@ -35,7 +36,7 @@ export default function Projects() {
     },
     {
       title: "Hardware Independent Architect",
-      // slug : "Block",
+      slug : "vendor-independent",
       category: "architecture",
       description: "상용 MCU 간 이식성과 확장성을 극대화하기 위해 HAL 레벨을 분리하고 추상화 기법을 적용한 하드웨어 독립적 펌웨어 아키텍처 설계 경험입니다.",
       tags: ["Cortex-M0", "C", "HAL_LIB"],
@@ -43,7 +44,7 @@ export default function Projects() {
     },
     {
       title: "Cortex-M0 기반 OTA 시스템 설계",
-      // slug: "Block",
+      slug : "ota",
       category: "Cortex-M0 - OTA Architect",
       description: "Cortex-M0 MCU 환경에서 부트로더와 메모리 맵(Memory Map)을 직접 설계하고, FSM 기반의 안정적인 펌웨어 무선 업데이트(OTA) 및 Fail-Safety 시나리오를 구축한 경험입니다.",
       tags: ["Cortex-M0", "Memory Map", "FSM", "Fail Safety"],
@@ -107,11 +108,14 @@ export default function Projects() {
                   View Repository &rarr;
                 </a>
               )}
-              {/* 상세 페이지 이동 버튼 */}
+              {/* 💡 상세 페이지 이동 버튼: next/link 컴포넌트로 버그 수정 */}
               {proj.slug && (
-                <a href={`/projects/${proj.slug}`} className="text-xs text-white font-mono hover:text-green-400 underline">
+                <Link 
+                  href={`/projects/${proj.slug}`} 
+                  className="text-xs text-white font-mono hover:text-green-400 underline"
+                >
                   View Details &rarr;
-                </a>
+                </Link>
               )}
             </div>
           </div>
